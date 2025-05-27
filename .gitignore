@@ -1,0 +1,42 @@
+# Conda/Python Environments
+env/
+venv/
+*.conda
+.env
+
+# Python Cache & Compiled Files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints
+
+# IDE / Editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data Files (Consider if your DEM data should be tracked - use Git LFS if large)
+# data/
+# *.tif
+# *.asc
+
+# Build/Dist artifacts
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.dbX
+
+# Installers and large archives
+*.sh
+*.zip
+*.gz
+*.tar

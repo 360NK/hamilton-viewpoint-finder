@@ -156,6 +156,6 @@ This project is distributed under the MIT License. See `LICENSE` for more inform
 
 ## Contact
 
-Kashy - [GitHub Profile](https://github.com/360NK) - [Your Email/LinkedIn (Optional)]
+Kashy - [GitHub Profile](https://github.com/360NK) - [LinkedIn]{https://www.linkedin.com/in/kashinath-namboothiri-46657b1a8/}
 
 Project Link: [https://github.com/360NK/hamilton-viewpoint-finder](https://github.com/360NK/hamilton-viewpoint-finder)

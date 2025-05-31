@@ -131,8 +131,6 @@ The accuracy of this tool is paramount. We employ a systematic ground-truth vali
 - Known Sites: Calibrating using established viewpoints like Dundurn Castle, Devil's Punchbowl, and Dundas Peak.
 - Data Collection: Recording GPS, elevation, and observable conditions during visits.
 
-See the full [Validation Plan](validation_plan.md) for details.
-
 ---
 
 ## Roadmap
@@ -143,8 +141,6 @@ This is an 8-week project (May 2025 - July 2025). Key milestones include:
 - Week 4: Complete Backend & API
 - Week 6: Functional Web Application
 - Week 8: Deployed & Validated System
-
-See the detailed [Project Roadmap](project_roadmap.md) for the week-by-week plan.
 
 ---
 

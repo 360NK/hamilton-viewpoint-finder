@@ -1,0 +1,8 @@
+name: hamilton-viewspot-finder
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - geopandas=0.13.2
+  - rasterio=1.2.10

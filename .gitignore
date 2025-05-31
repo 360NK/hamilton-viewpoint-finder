@@ -1,42 +1,62 @@
-# Conda/Python Environments
-env/
-venv/
-*.conda
+
+# Environment files
 .env
+.venv/
+venv/
+ENV/
+env/
 
-# Python Cache & Compiled Files
+# Conda environment artifacts
+.conda/
+conda-meta/
+envs/
+pkgs/
+.condarc
+
+# Python cache
 __pycache__/
-*.py[cod]
-*$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
+# Data files - too large for Git
+data/raw/
+data/processed/
+*.tif
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
 
-# Jupyter Notebook Checkpoints
-.ipynb_checkpoints
+# Mac-specific files (especially problematic on external drives)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# IDE / Editor specific
+# Hidden Mac metadata files
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Environment and system files
+.env
+__pycache__/
+*.pyc
 .vscode/
-.idea/
-*.swp
-*.swo
-
-# Data Files (Consider if your DEM data should be tracked - use Git LFS if large)
-# data/
-# *.tif
-# *.asc
-
-# Build/Dist artifacts
-build/
-dist/
-*.egg-info/
-
-# Logs
+.conda/
 *.log
 
-# OS-specific
-.DS_Store
-Thumbs.dbX
-
-# Installers and large archives
-*.sh
-*.zip
-*.gz
-*.tar
+# Large outputs
+outputs/
+temp/
+cache/
+Miniconda3-latest-MacOSX-x86_64.sh

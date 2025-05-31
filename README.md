@@ -146,7 +146,7 @@ This is an 8-week project (May 2025 - July 2025). Key milestones include:
 
 ## License
 
-This project is distributed under the MIT License. See `LICENSE` for more information. _(You'll need to add a LICENSE file later)_
+(Need to add a LICENSE file later)
 
 ---
 

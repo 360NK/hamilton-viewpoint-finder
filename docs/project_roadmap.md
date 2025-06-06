@@ -2,10 +2,11 @@
 
 ## Project Overview
 
-**Goal:** Build an interactive web platform for discovering optimal recreational viewpoints along Hamilton's Niagara Escarpment using advanced viewshed analysis.
+**Goal:** Build an interactive web platform for discovering optimal recreational viewpoints along the Niagara Escarpment using advanced viewshed analysis.
 
 **Timeline:** 8 weeks (December 2024 - February 2025)
 **Validation:** Ground-truth field visits with photographic documentation
+**Scope Update:** Expanded from Hamilton-only to full Niagara Escarpment for broader impact
 
 ---
 
@@ -17,227 +18,229 @@
 
 **Project Setup**
 
-- [x] Claude project configuration
 - [x] GitHub repository creation
 - [x] Development environment setup (conda with spatial libraries)
 - [x] Project documentation structure
+- [x] Git repository with proper .gitignore for Mac + spatial data
+
+**Data Foundation**
 
 - [x] Located HRDEM 2m DSM COG tiles (8_1, 8_2) for Hamilton area
 - [x] Downloaded Niagara Escarpment Plan boundary shapefile
 - [x] Downloaded Hamilton municipal boundary shapefile
 - [x] Successfully intersected boundaries to create precise study area
 - [x] Confirmed 2m DSM covers Hamilton escarpment completely
+- [x] Validated cloud COG URLs and accessibility
 
-- [x] Implemented boundary intersection script
+**Boundary Processing**
+
+- [x] Implemented boundary intersection script (`intersect_boundaries.py`)
 - [x] Created hamilton_escarpment_intersection.shp
 - [x] Validated intersection results with visualization
 - [x] Set up cloud COG workflow for DEM processing
 
-- [ ] Implement basic viewshed calculation
-- [ ] Test with known viewpoints (Dundurn, Devil's Punchbowl)
-- [ ] Validate algorithm accuracy
-- [ ] Performance optimization for interactive use
+**Algorithm Development - IN PROGRESS**
+
+- [x] Multi-tile viewshed analysis framework (`viewshed_analysis.py`)
+- [x] Coordinate transformation (EPSG:4326 → EPSG:3979)
+- [x] Line-of-sight calculation logic with Earth curvature
+- [x] COG optimization for cloud access
+- [ ] **BLOCKER:** COG performance optimization for 250+ sample points
+- [ ] Simplified algorithm for rapid prototyping (10-20 sample points)
 
 **Week 1 Success Metrics:**
 
-- [x] Precise study area defined using official boundaries
-- [x] Cloud-native data processing workflow established
-- [x] Intersection validation completed
+- [x] Precise study area defined using official boundaries ✅
+- [x] Cloud-native data processing workflow established ✅
+- [x] Multi-tile coordinate transformation working ✅
+- [⚠️] Working viewshed calculation (needs performance optimization)
 
-**Week 1 Success Metrics:**
+---
 
-- [ ] Working viewshed calculation for any point
-- [ ] Processing time <10 seconds for Hamilton area
-- [ ] Accurate results for 2+ known viewpoints
+### Week 2: Algorithm Optimization & Web Framework Setup
 
-### Week 2: Enhanced Analysis & Recreational Scoring
+**Updated Focus:** Performance optimization + Basic web infrastructure
 
-**Focus:** Multi-criteria analysis, recreational suitability assessment
+**Priority Goals:**
 
-**Goals:**
+- [ ] **CRITICAL:** Optimize COG reading for interactive performance
+  - [ ] Window-based reading instead of individual pixel access
+  - [ ] Reduce sample points to 10-20 for prototyping
+  - [ ] Implement caching strategy for repeated calculations
+- [ ] FastAPI backend foundation
+  - [ ] Basic API structure with viewshed endpoints
+  - [ ] CORS setup for frontend integration
+  - [ ] Error handling and timeouts
+- [ ] React frontend foundation
+  - [ ] Interactive Leaflet map
+  - [ ] Click-to-analyze functionality
+  - [ ] Basic line-of-sight visualization
 
-- [ ] Implement scenic quality scoring system
-- [ ] Add privacy/seclusion analysis
-- [ ] Accessibility assessment algorithms
-- [ ] Weather protection analysis
-- [ ] Create comprehensive recreational scoring system
+**Technical Debt Resolution:**
 
-**Deliverables:**
-
-- [ ] Recreational scoring algorithm
-- [ ] Privacy assessment (reverse viewshed)
-- [ ] Accessibility analysis (slope, distance to trails)
-- [ ] Multi-criteria decision framework
-
-### Week 3: Spatial Database & API Foundation
-
-**Focus:** Data management, API architecture
-
-**Goals:**
-
-- [ ] PostgreSQL/PostGIS database setup
-- [ ] Spatial indexing for performance
-- [ ] FastAPI application structure
-- [ ] RESTful endpoint design
-- [ ] Background processing with Celery
+- [ ] COG access optimization (current blocker)
+- [ ] Performance benchmarking with target <10 second response
+- [ ] Test with 2-3 known Hamilton viewpoints
 
 **Deliverables:**
 
-- [ ] Spatial database schema
-- [ ] API endpoints for viewshed analysis
-- [ ] Background task processing
-- [ ] API documentation
+- [ ] Working viewshed API with basic frontend
+- [ ] Performance-optimized COG access
+- [ ] End-to-end demo capability
 
-### Week 4: Real-time Data Integration
+---
 
-**Focus:** Environmental conditions, practical information
+### Week 3: Enhanced Analysis & API Expansion
+
+**Focus:** Multi-criteria analysis, API robustness
+
+**Goals:**
+
+- [ ] Recreational scoring system implementation
+- [ ] Privacy/seclusion analysis (reverse viewshed basics)
+- [ ] Accessibility assessment using slope calculations
+- [ ] API documentation with OpenAPI/Swagger
+- [ ] Error handling and edge case management
+
+**Deliverables:**
+
+- [ ] Multi-criteria scoring algorithm
+- [ ] Comprehensive API with recreational metrics
+- [ ] API documentation and testing suite
+
+---
+
+### Week 4: Real-time Data Integration & Validation Prep
+
+**Focus:** Environmental data, field validation setup
 
 **Goals:**
 
 - [ ] Weather API integration (Environment Canada)
-- [ ] Real-time air quality data
-- [ ] Sunrise/sunset calculations
-- [ ] Trail and access information
-- [ ] Legal/ownership boundary data
+- [ ] Real-time visibility conditions
+- [ ] Ground truth validation methodology
+- [ ] Plan field visits to 5-7 viewpoints
+- [ ] Photo documentation system design
 
 **Deliverables:**
 
 - [ ] Environmental data pipeline
-- [ ] Real-time condition reporting
-- [ ] Access and legal information system
+- [ ] Validation framework
+- [ ] Field testing preparation
 
-### Week 5: Web Interface Foundation
+---
 
-**Focus:** Frontend development, mapping interface
+### Week 5: Field Validation & Algorithm Refinement
 
-**Goals:**
-
-- [ ] React application setup
-- [ ] Interactive Leaflet map implementation
-- [ ] Click-to-analyze functionality
-- [ ] Real-time viewshed visualization
-- [ ] Basic UI/UX design
-
-**Deliverables:**
-
-- [ ] Interactive map interface
-- [ ] Real-time analysis capabilities
-- [ ] Responsive design foundation
-
-### Week 6: Advanced Visualization & User Experience
-
-**Focus:** Enhanced features, user interface polish
-
-**Goals:**
-
-- [ ] 3D viewshed visualization
-- [ ] Comparative analysis tools
-- [ ] Photo integration system
-- [ ] Export capabilities
-- [ ] Mobile optimization
-
-**Deliverables:**
-
-- [ ] Advanced visualization features
-- [ ] Photo documentation integration
-- [ ] Export and sharing capabilities
-
-### Week 7: Ground Truth Validation & Optimization
-
-**Focus:** Field validation, performance optimization
+**Focus:** Ground truth testing, accuracy assessment
 
 **Goals:**
 
 - [ ] Systematic field validation campaign
-- [ ] Algorithm accuracy assessment
-- [ ] Performance optimization
-- [ ] User testing and feedback
-- [ ] Bug fixes and refinements
+- [ ] Photo documentation of predicted vs actual views
+- [ ] Algorithm accuracy assessment and tuning
+- [ ] Performance optimization based on real usage
 
 **Deliverables:**
 
-- [ ] Validation report with photo documentation
-- [ ] Accuracy assessment metrics
-- [ ] Performance optimization results
+- [ ] Validation report with photo evidence
+- [ ] Accuracy metrics and algorithm improvements
+- [ ] Optimized analysis engine
 
-### Week 8: Polish, Deployment & Documentation
+---
 
-**Focus:** Production deployment, professional presentation
+### Week 6: Frontend Polish & Advanced Features
+
+**Focus:** User experience, visualization enhancement
+
+**Goals:**
+
+- [ ] Advanced mapping interface
+- [ ] 3D viewshed visualization
+- [ ] Comparative analysis tools
+- [ ] Mobile-responsive design
+- [ ] Export and sharing capabilities
+
+**Deliverables:**
+
+- [ ] Professional web interface
+- [ ] Advanced visualization features
+- [ ] Mobile optimization
+
+---
+
+### Week 7: Production Readiness & Documentation
+
+**Focus:** Deployment preparation, comprehensive documentation
 
 **Goals:**
 
 - [ ] Production deployment setup
-- [ ] Comprehensive documentation
-- [ ] User guide and tutorials
+- [ ] Performance monitoring
+- [ ] User guide creation
+- [ ] Technical documentation completion
 - [ ] Portfolio presentation materials
-- [ ] LinkedIn content creation
 
 **Deliverables:**
 
-- [ ] Live deployed application
-- [ ] Complete technical documentation
-- [ ] Portfolio presentation
+- [ ] Deployed application
+- [ ] Complete documentation suite
+- [ ] Portfolio-ready presentation
+
+---
+
+### Week 8: Portfolio Presentation & Professional Showcase
+
+**Focus:** Career advancement preparation
+
+**Goals:**
+
+- [ ] LinkedIn content creation (5 strategic posts)
+- [ ] Portfolio integration
+- [ ] Demo video creation
+- [ ] Technical interview preparation
+- [ ] Open source community engagement
+
+**Deliverables:**
+
 - [ ] Professional project showcase
+- [ ] Career advancement materials
+- [ ] Technical presentation capability
 
 ---
 
-## Key Milestones
+## Updated Risk Assessment
 
-### Milestone 1 (End Week 2): Core Analysis Engine
+### Current Blockers:
 
-- Working viewshed algorithm with recreational scoring
-- Validated accuracy on known Hamilton viewpoints
-- Performance suitable for interactive use
-
-### Milestone 2 (End Week 4): Complete Backend
-
-- Full API with real-time data integration
-- Spatial database with comprehensive data
-- Background processing for complex analysis
-
-### Milestone 3 (End Week 6): Functional Web Application
-
-- Interactive map interface
-- Real-time analysis capabilities
-- Professional user experience
-
-### Milestone 4 (End Week 8): Production System
-
-- Deployed application with full features
-- Validated accuracy through field testing
-- Professional documentation and presentation
-
----
-
-## Risk Mitigation
+- **COG Performance:** 250 sample points too slow for interactive use
+  - **Mitigation:** Reduce to 10-20 points, optimize reading strategy
+- **Internet Dependency:** COG access requires stable connection
+  - **Mitigation:** Implement caching, graceful fallbacks
 
 ### Technical Risks:
 
-- **Performance Issues:** Start with smaller study area, optimize incrementally
-- **Data Quality Problems:** Have backup data sources identified
-- **Algorithm Complexity:** Implement basic version first, enhance iteratively
+- **Real-time Requirements:** <10 second response target challenging
+- **Scope Expansion:** Niagara Escarpment broader than original Hamilton focus
+- **Field Validation:** Weather-dependent validation schedule
 
-### Timeline Risks:
+### Success Criteria (Updated):
 
-- **Scope Creep:** Stick to core features, defer nice-to-haves
-- **Learning Curve:** Allocate buffer time for new technologies
-- **Validation Delays:** Weather-dependent field work has backup plans
-
-### Success Criteria:
-
-- **Technical:** Interactive viewshed analysis with <10 second response
-- **Practical:** Accurately identifies 8/10 high-quality viewpoints
-- **Portfolio:** Professional application suitable for employer demonstration
+- **Technical:** Functional viewshed analysis with reasonable performance
+- **Practical:** Validated accuracy on 5+ real viewpoints
+- **Portfolio:** Professional demonstration suitable for employers
+- **Innovation:** Showcase of cloud-native geospatial processing
 
 ---
 
-## Current Status: Week 1, Day 1
+## Current Status: Week 1 Complete, Week 2 Priority
 
-**Next Steps:**
+**Immediate Next Steps:**
 
-1. Complete development environment setup
-2. Download and test Hamilton DEM data
-3. Implement basic viewshed calculation
-4. Plan first validation field trip
+1. **PRIORITY:** Resolve COG performance issue (window reading approach)
+2. Create simplified FastAPI backend with basic viewshed endpoint
+3. Build minimal React frontend for testing
+4. Validate end-to-end workflow with 2-3 sample points
 
-**Immediate Focus:** Getting core viewshed algorithm working with Hamilton data
+**Current Blocker:** COG reading optimization for interactive performance
+**Timeline Impact:** Week 2 focus shifted to performance + basic web framework
